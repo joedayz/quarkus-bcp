@@ -1,0 +1,24 @@
+{#include base.html}
+{#title}{purchaseOrders.size} Purchase Orders{/title}
+{#body}
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Date</th>
+    <th scope="col">Customer</th>
+  </tr>
+  </thead>
+  <tbody>
+  {#for purchaseOrder in purchaseOrders}
+  <tr>
+    <th scope="row"><a href="http://localhost:8080/page/purchase-orders/{purchaseOrder.id}">{purchaseOrder.id}</a></th>
+    <td>{purchaseOrder.date}</td>
+    <td><a href="http://localhost:8080/page/customers/{purchaseOrder.customer.id}">{purchaseOrder.customer.firstName} {purchaseOrder.customer.lastName}</a></td>
+  </tr>
+  {/for}
+  </tbody>
+</table>
+{/body}
+{/include}
+

@@ -1,0 +1,22 @@
+{#include base.html}
+{#title}{publishers.size} Publishers{/title}
+{#body}
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  {#for publisher in publishers}
+  <tr>
+    <th scope="row"><a href="http://localhost:8080/page/publishers/{publisher.id}">{publisher.id}</a></th>
+    <td>{publisher.name}</td>
+  </tr>
+  {/for}
+  </tbody>
+</table>
+{/body}
+{/include}
+
